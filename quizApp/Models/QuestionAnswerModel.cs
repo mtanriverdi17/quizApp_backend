@@ -7,11 +7,11 @@ namespace quizApp.Models
     {
         public QuestionAnswerModel()
         {
-            Choices = new List<ChoiceModel>();
+            Choices = new List<Choice>();
         }
         public int QuestionId { get; set; }
         public string Question { get; set; }
         
-        public IList<ChoiceModel> Choices { get; set; }
+        public IList<Choice> Choices { get; set; }
     }
 }
