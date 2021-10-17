@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace quizApp
+namespace quizApp.Data
 {
     public class ApplicationDbContext : DbContext
     {

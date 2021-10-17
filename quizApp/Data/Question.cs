@@ -1,4 +1,4 @@
-namespace quizApp
+namespace quizApp.Data
 {
     public class Question
     {

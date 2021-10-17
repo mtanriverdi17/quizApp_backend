@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using quizApp;
+using quizApp.Data;
 
 namespace quizApp.Migrations
 {
@@ -16,7 +16,7 @@ namespace quizApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.11");
 
-            modelBuilder.Entity("quizApp.Choice", b =>
+            modelBuilder.Entity("quizApp.Data.Choice", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,7 +38,7 @@ namespace quizApp.Migrations
                     b.ToTable("Choice");
                 });
 
-            modelBuilder.Entity("quizApp.Question", b =>
+            modelBuilder.Entity("quizApp.Data.Question", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -52,9 +52,9 @@ namespace quizApp.Migrations
                     b.ToTable("Question");
                 });
 
-            modelBuilder.Entity("quizApp.Choice", b =>
+            modelBuilder.Entity("quizApp.Data.Choice", b =>
                 {
-                    b.HasOne("quizApp.Question", "Question")
+                    b.HasOne("quizApp.Data.Question", "Question")
                         .WithMany()
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade)

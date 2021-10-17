@@ -1,15 +1,10 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace quizApp
+namespace quizApp.Models
 {
-    public class Choice
+    public class ChoiceModel
     {
         public int Id { get; set; }
         public string ChoiceText { get; set; }
         public bool IsCorrect { get; set; }
-        
-        [ForeignKey("Question")]
         public int QuestionId { get; set; }
-        public Question Question { get; set; }
     }
 }

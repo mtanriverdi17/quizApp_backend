@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using quizApp.Data;
 using quizApp.Models;
+
 
 namespace quizApp.Controllers
 {   [ApiController]
@@ -17,7 +19,7 @@ namespace quizApp.Controllers
         }
 
         [HttpGet]
-        public IList<QuestionAnswerModel> Get()
+        public IEnumerable<QuestionAnswerModel> Get()
         {
             var questions = _dbContext.Question.ToList();
             var array = new List<QuestionAnswerModel>(); 
@@ -35,7 +37,7 @@ namespace quizApp.Controllers
             }
 
             var rnd = new Random();
-            return array.OrderBy(x => rnd.Next()).Take(5).ToList();
+            return array.OrderBy(x => rnd.Next()).Take(5).ToArray();
         }
     }
 }
